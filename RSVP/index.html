@@ -1,0 +1,466 @@
+<!doctype html>
+<head>
+	<title>Caleb & Kamila RSVP</title>
+	<meta charset="utf-8"/>
+	<link rel="shortcut icon" href="/favicon.ico"/>
+
+	<style>
+		/* Wootzize */
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			font: menu;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: url('/images/maratua-sunset.jpg');
+			background-position: center center;
+			background-size: cover;
+		}
+		.Background {
+			position: absolute;
+			top: 3vh;
+			left: 3vw;
+			height: 94vh;
+			width: 94vw;
+			border-radius: 8px;
+			background-color: rgba(255, 255, 255, 0.7);
+			overflow-y: scroll;
+		}
+		.Foreground {
+			padding: 15px 20px;
+		}
+
+		.Banner {
+			text-align: center;
+		}
+
+		.FormHeader {
+			margin: 0 auto 1em;
+			max-width: 40em;
+		}
+
+		.Form {
+			background-color: #ffffff;
+			padding: 2vh 5vw;
+			border-radius: 5px;
+			max-width: 40em;
+			margin: 0 auto;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+		}
+		.Form h4 {
+			margin-bottom: 0;
+		}
+
+		/* Form Formatting */
+		#refQuery {
+			display: none;
+		}
+
+		.FloatingLabel,
+		.FixedLabel {
+			position: relative;
+			margin: 0;
+			padding: 2em 0 1em;
+		}
+
+		.FloatingLabel input,
+		.FixedLabel input {
+			display: block;
+			height: 3em;
+			width: calc(100% - 1.5em - 2px);
+			margin: 0;
+			padding: 0 0.75em;
+			border: 1px solid #4a4a4a;
+			border-radius: 0.2em;
+			background-color: #ffffff;
+			font-size: 16px;
+			font-weight: 400;
+			-webkit-box-shadow: none;
+					box-shadow: none;
+			outline: none;
+			-webkit-appearance: none;
+				 -moz-appearance: none;
+			transition: all 0.2s ease-out;
+		}
+
+		.FloatingLabel input::placeholder,
+		.FixedLabel input::placeholder {
+			font-size: 16px;
+			font-weight: 400;
+			color: #a4a4a4;
+		}
+
+		.FloatingLabel input + label {
+			position: absolute;
+			top: calc(3.25em + 1px);
+			left: calc(0.75em + 1px);
+			font-size: 16px;
+			font-weight: 400;
+			transition: all 0.2s ease-out;
+			opacity: 0;
+		}
+
+		.FloatingLabel input:not(:placeholder-shown) + label {
+			top: 0.25em;
+			left: 1px;
+			opacity: 1;
+		}
+
+		.FixedLabel input + label {
+			position: absolute;
+			top: 0.25em;
+			left: 1px;
+			font-size: 16px;
+			font-weight: 400;
+			opacity: 1;
+		}
+
+		.FloatingLabel input:required {
+			background-repeat: no-repeat;
+			background-position: right 1rem center;
+			background-size: 0.75rem;
+		}
+
+		.FloatingLabel input:required:valid {
+			border-color: #2EEC96;
+			background-image: url("data:image/svg+xml,%3Csvg width='45px' height='34px' viewBox='0 0 45 34' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate%28-56.000000, -59.000000%29' fill='%232EEC96'%3E%3Cpolygon points='70.1468531 85.8671329 97.013986 59 100.58042 62.5664336 70.1468531 93 56 78.8531469 59.5664336 75.2867133'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+		}
+
+		.FloatingLabel input:required:invalid {
+			border-color: #F44336;
+			background-image: url("data:image/svg+xml,%3Csvg width='30px' height='30px' viewBox='0 0 30 30' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg transform='translate%28-128.000000, -59.000000%29' fill='%23F44336'%3E%3Cpolygon points='157.848404 61.9920213 145.980053 73.8603723 157.848404 85.7287234 154.856383 88.7207447 142.988032 76.8523936 131.119681 88.7207447 128.12766 85.7287234 139.996011 73.8603723 128.12766 61.9920213 131.119681 59 142.988032 70.8683511 154.856383 59'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+		}
+
+		.FloatingLabel textarea {
+			display: block;
+			height: 8em;
+			width: calc(100% - 1.5em - 2px);
+			margin: 0;
+			padding: 0.75em 0.75em;
+			border: 1px solid #4a4a4a;
+			border-radius: 0.2em;
+			background-color: #ffffff;
+			font-size: 16px;
+			font-weight: 400;
+			resize: none;
+			-webkit-box-shadow: none;
+					box-shadow: none;
+			outline: none;
+			-webkit-appearance: none;
+				 -moz-appearance: none;
+			transition: all 0.2s ease-out;
+			font: menu;
+		}
+
+		.FloatingLabel textarea::placeholder {
+			font-size: 16px;
+			font-weight: 400;
+			color: #a4a4a4;
+			font: menu;
+		}
+
+		.FloatingLabel textarea + label {
+			position: absolute;
+			top: calc(2.75em + 1px);
+			left: calc(0.75em + 1px);
+			font-size: 16px;
+			font-weight: 400;
+			transition: all 0.2s ease-out;
+			opacity: 0;
+		}
+
+		.FloatingLabel textarea:not(:placeholder-shown) + label {
+			top: 0.25em;
+			left: 1px;
+			opacity: 1;
+		}
+
+		.FloatingLabel textarea:required:valid {
+			border-color: #2EEC96;
+		}
+
+		.FloatingLabel textarea:required:invalid {
+			border-color: #F44336;
+		}
+
+		.ClickLabel > input {
+			display: inline-block;
+			height: 1.5em;
+			width: 1.5em;
+			margin-bottom: 1em;
+		}
+
+		.ClickLabel > input + label {
+			position: relative;
+			top: -0.25em;
+		}
+
+		.RadioGroup {
+			padding-bottom: 1em;
+		}
+
+		.RadioGroup span {
+			position: relative;
+			top: -0.25em;
+		}
+
+		input[type=submit] {
+			display: block;
+			width: calc(100% - 2em - 2px);
+			margin: 2em auto;
+			padding: 1em;
+			border: 1px solid #4a4a4a;
+			border-radius: 0.2em;
+			background-color: #2EEC96;
+			font-size: 16px;
+			font-weight: 400;
+			-webkit-box-shadow: none;
+					box-shadow: none;
+			outline: none;
+			-webkit-appearance: none;
+				 -moz-appearance: none;
+		}
+
+		/* Helper Classes */
+		.text-center {
+			text-align: center;
+		}
+		.text-left {
+			text-align: left;
+		}
+		.pad-top {
+			padding-top: 3em;
+		}
+		.pad-bottom {
+			padding-bottom: 3em;
+		}
+
+		/* Conditional Formatting for Radio Selectors */
+		.ConditionalResponse--no,
+		.ConditionalResponse--yes {
+			display: none;
+		}
+		.ConditionalQuestion > input[type=radio][value=no]:checked ~ .ConditionalResponse.ConditionalResponse--no,
+		.ConditionalQuestion > input[type=radio][value=yes]:checked ~ .ConditionalResponse.ConditionalResponse--yes {
+			display: block;
+		}
+
+		/* Conditional Formatting for Checkboxes */
+		.ConditionalResponse--checked {
+			display: none;
+		}
+		.ConditionalQuestion > input[type=checkbox]:checked ~ .ConditionalResponse.ConditionalResponse--checked {
+			display: block;
+		}
+	</style>
+
+
+</head>
+<body>
+	<div class="Background">
+		<div class="Foreground">
+			<div class="Banner">
+				<h1>Caleb & Kamila are Getting Married!</h1>
+				<h2>September 12, 2020</h2>
+				<h2>
+					Brant Lake Summer Camp
+					<a target="_blank" href="https://www.openstreetmap.org/search?query=43.71710%2C-73.69174#map=17/43.71710/-73.69174">
+						<svg class="LinkOut" viewBox="0 0 12 12" height="20" width="20" fill-rule="evenodd">
+							<path fill="#33ccff" stroke="#36c" d="M1.5 4.518h5.982V10.5H1.5z"/>
+							<path fill="#6666ff" stroke="#36c" d="M5.765 1H11v5.39L9.427 7.937l-1.31-1.31L5.393 9.35l-2.69-2.688 2.81-2.808L4.2 2.544z"/>
+						</svg>
+					</a>
+				</h2>
+			</div>
+
+			<h3 class="FormHeader">RSVP Form:</h3>
+			<div class="Form">
+				<form action="https://formspree.io/xoqkpzre" method="POST">
+					<input id="refQuery" type="text" name="refQuery" value="" />
+
+					<h3 class="text-center">First, please tell us about yourself</h3>
+
+					<p class="FloatingLabel">
+						<input type="text" id="guest-name" placeholder="First and Last Name(s)" name="name" required>
+						<label for="guest-name">First and Last Name(s):</label>
+					</p>
+
+					<p class="FloatingLabel">
+						<input type="email" id="guest-email"  placeholder="Email Address" name="_replyto" required>
+						<label for="guest-email">Email Address:</label>
+					</p>
+
+					<p class="FloatingLabel">
+						<textarea id="guest-address"  placeholder="Mailing Address" name="address" required></textarea>
+						<label for="guest-address">Mailing Address:</label>
+					</p>
+
+					<p class="FloatingLabel pad-bottom">
+						<input type="text" id="guest-phone" placeholder="Phone Number" name="phone">
+						<label for="guest-phone">Phone Number:</label>
+					</p>
+
+					<h3 class="text-center">Schedule of Events:</h3>
+					<div class="pad-bottom">
+						<p><b>Friday, September 11:</b> Welcome BBQ Dinner</p>
+						<p><b>Saturday, September 12 Day:</b> Breakfast, Lunch, Camp Activities</p>
+						<p><b>Saturday, September 12 Afternoon & Evening:</b> Ceremony, Dinner & Reception</p>
+						<p><b>Sunday, September 13 Morning:</b> Farewell Brunch</p>
+					</div>
+
+					<h3 class="text-center">
+						<p>Our goal is to host a Coronavirus Responsible, Socially Distant event</p>
+					</h3>
+					<div>
+						<p>Accommodations in Brant Lake Camp will be free to guests.</p>
+						<p>During normal operation, Brant Lake Camp hosts more than 500 campers. There are enough cabins for each family, couple, or individual to have their own bunk.</p>
+					</div>
+					<div class="ConditionalQuestion ClickLabel pad-bottom">
+						<input type="checkbox" id="covid-precautions"/>
+						<label for="covid-precautions">
+							I have a question about the Caronavirus precautions you are taking
+						</label>
+
+						<div class="ConditionalResponse ConditionalResponse--checked">
+							<p class="FloatingLabel">
+								<textarea id="covid-precautions-question"  placeholder="Ask your question here" name="covid-precautions-question"></textarea>
+								<label for="covid-precautions-question">Ask your question here:</label>
+							</p>
+						</div>
+					</div>
+
+
+						<h3 class="text-center">
+							<p>
+								Masks will be required in communal areas.
+								<br />
+								Please respect our choice to take Coronavirus seriously.
+							</p>
+						</h3>
+
+					<div class="ConditionalQuestion ClickLabel">
+						<input type="radio" name="rsvp" value="yes" id="rsvp-yes" required />
+						<label for="rsvp-yes">I understand, I will be able to attend</label>
+						<br />
+						<input type="radio" name="rsvp" value="no" id="rsvp-no" required />
+						<label for="rsvp-no">I will not be able to come</label>
+
+						<div class="ConditionalResponse ConditionalResponse--yes pad-top">
+							<h3 class="text-center">
+								<p>Now for the Real Meat and Potatoes...</p>
+							</h3>
+
+							<div>
+								<p>Will you be able to attend the Friday Welcome BBQ?</p>
+								<p class="RadioGroup text-center">
+									<label class="ClickLabel">
+										<input type="radio" name="rsvp-1-welcomebbq" value="yes">
+										<span>Yes</span>
+									</label>
+									<label class="ClickLabel">
+										<input type="radio" name="rsvp-1-welcomebbq" value="no">
+										<span>No</span>
+									</label>
+									<label class="ClickLabel">
+										<input type="radio" name="rsvp-1-welcomebbq" value="maybe">
+										<span>Maybe</span>
+									</label>
+								</p>
+							</div>
+
+							<div>
+								<p>Would you like to stay in a cabin at Brant Lake Camp Friday night?</p>
+								<p class="RadioGroup text-center">
+									<label>
+										<input type="radio" name="rsvp-2-night1accom" value="yes">
+										<span>Yes</span>
+									</label>
+									<label>
+										<input type="radio" name="rsvp-2-night1accom" value="no">
+										<span>No</span>
+									</label>
+									<label>
+										<input type="radio" name="rsvp-2-night1accom" value="maybe">
+										<span>Maybe</span>
+									</label>
+								</p>
+							</div>
+
+							<div>
+								<p>Will you be at the Saturday Ceremony, Dinner & Reception?</p>
+								<p class="RadioGroup text-center">
+									<label>
+										<input type="radio" name="rsvp-3-ceremonyreception" value="yes">
+										<spn>Yes</span>
+									</label>
+									<label>
+										<input type="radio" name="rsvp-3-ceremonyreception" value="no">
+										<spn>No</span>
+									</label>
+								</p>
+							</div>
+
+							<div>
+								<p>Would you like to stay in a cabin at Brant Lake Camp Saturday night?</p>
+								<p class="RadioGroup text-center">
+									<label>
+										<input type="radio" name="rsvp-4-night2accom" value="yes">
+										<span>Yes</span>
+									</label>
+									<label>
+										<input type="radio" name="rsvp-4-night2accom" value="no">
+										<span>No</span>
+									</label>
+								</p>
+							</div>
+
+							<div>
+								<p>Do you plan to attend the Farewell Brunch on Sunday?</p>
+								<p class="RadioGroup text-center pad-bottom">
+									<label>
+										<input type="radio" name="rsvp-5-farewell" value="yes">
+										<span>Yes</span>
+									</label>
+									<label>
+										<input type="radio" name="rsvp-5-farewell" value="no">
+										<span>No</span>
+									</label>
+									<label>
+										<input type="radio" name="rsvp-5-farewell" value="maybe">
+										<span>Maybe</span>
+									</label>
+								</p>
+							</div>
+
+							<p class="FixedLabel">
+								<input type="text" id="activities" placeholder="Egg Toss, Dodgeball, Tie Dye, Yoga, Tennis, Swimming, ..." name="activities">
+								<label for="activities">What camp activities interest you?</label>
+							</p>
+
+							<p class="FixedLabel pad-bottom">
+								<input type="text" id="music" placeholder="Moondance, Tweezer Reprise, Body Language, ..." name="music">
+								<label for="music">What are your song requests?</label>
+							</p>
+						</div>
+
+						<div class="ConditionalResponse ConditionalResponse--no">
+							We completely understand and we will miss seeing you.
+						</div>
+					</div>
+
+					<input type="submit" value="Send RSVP" />
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const search = window && window.location && window.location.search || "";
+		document.getElementById("refQuery").value = search.substr(1);
+	</script>
+
+</body>
