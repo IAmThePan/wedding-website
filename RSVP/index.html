@@ -9,8 +9,8 @@
 		forward to seeing everyone when we are able.
 
 		Notes on the code:
-		With a few exceptions I wrote all the code myself; do you like how I used
-		almost no JavaScript?
+			With a few exceptions I wrote all the code myself.
+			Do you like how I used almost no JavaScript?
 		Exceptions (things I didn't write myself):
 		- The link to the map was modified from Wikipedia's External Link icon
 			https://en.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg
@@ -19,10 +19,13 @@
 		- I used many tips from Jonathan Harrell's article Advanced CSS Only Form Styling
 			https://www.jonathan-harrell.com/blog/advanced-css-only-form-styling/
 			In particular, I used his ✓ and ✗ mostly unmodified.
+		- RSVP submissions are collected using Formspree
+			https://github.com/formspree/formspree
 	-->
 	<title>Caleb & Kamila RSVP</title>
 	<meta charset="utf-8"/>
 	<link rel="shortcut icon" href="/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<style>
 		/* Wootzize */
@@ -36,9 +39,9 @@
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: url('/images/maratua-sunset.jpg');
-			background-position: center center;
-			background-size: cover;
+			background:
+				linear-gradient(to bottom, #9198e5 0%, transparent 70%, rgba(17, 22, 26, 0.4) 70%, rgba(17, 22, 26, 1) 100%),
+				radial-gradient(circle at 10% 50%, #ff3355 0%, #4433ee 100%);
 		}
 		.Background {
 			position: absolute;
@@ -76,10 +79,6 @@
 		}
 
 		/* Form Formatting */
-		#refQuery {
-			display: none;
-		}
-
 		.FloatingLabel,
 		.FixedLabel {
 			position: relative;
@@ -246,6 +245,9 @@
 		}
 
 		/* Helper Classes */
+		.hide {
+			display: none;
+		}
 		.text-center {
 			text-align: center;
 		}
@@ -300,7 +302,9 @@
 			<h3 class="FormHeader">RSVP Form:</h3>
 			<div class="Form">
 				<form action="https://formspree.io/xoqkpzre" method="POST">
-					<input id="refQuery" type="text" name="refQuery" value="" />
+					<input class="hide" type="text" name="refQuery" value="" />
+					<input class="hide" type="text" name="_gotcha" value="" />
+					<input class="hide" type="text" name="_subject" value="RSVP to Caleb & Kamila's Wedding" />
 
 					<h3 class="text-center">First, please tell us about yourself</h3>
 
@@ -337,7 +341,7 @@
 					</h3>
 					<div>
 						<p>Accommodations in Brant Lake Camp will be free to guests.</p>
-						<p>During normal operation, Brant Lake Camp hosts more than 500 campers. There are enough cabins for each family, couple, or individual to have their own bunk.</p>
+						<p>There will be plenty of space for social distancing.</p>
 					</div>
 					<div class="ConditionalQuestion ClickLabel pad-bottom">
 						<input type="checkbox" id="covid-precautions"/>
