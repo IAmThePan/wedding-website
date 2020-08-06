@@ -10,18 +10,28 @@
 		html {
 			margin: 0;
 			padding: 0;
-			height: 100%;
+			height: 100vh;
 			font: menu;
+		}
+		body {
+			margin: 0;
+			background: linear-gradient(#afafaf, #4a4a4a);
+			background-repeat: no-repeat;
+			background-attachment: fixed;
 		}
 
 		/* Gallery CSS */
 		.Gallery {
+			padding: 1em;
 			display: flex;
 			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.Gallery a {
+			height: 150px;
 		}
 		.Gallery img {
-			height: 150px;
-			width: 200px;
+			height: 100%;
 		}
 
 		/* Modal CSS */
@@ -76,7 +86,6 @@
 			display: flex;
 			justify-content: center;
 			overflow: hidden;
-			pointer-events: none;
 			scroll-snap-align: start;
 		}
 		.Modal--Checkbox:checked + .Modal .Caourcel--Slide:target .Slide--BackLink,
@@ -127,9 +136,9 @@
 	</style>
 </head>
 <body>
-	<div id="gallery" class="Gallery" onClick="document.getElementById('modal-1').checked = true;">
+	<div id="gallery" class="Gallery">
 		<a id="gallery-photo" href="">
-			<img src="" />
+			<img src="" onClick="document.getElementById('modal-1').checked = true;" />
 		</a>
 	</div>
 
@@ -220,5 +229,15 @@
 			carousel.appendChild(el);
 		}
 
+		// Add Keypresses
+		document.addEventListener("keydown", (event) => {
+			if (event.keyCode === 37) {
+				document.getElementById(location.hash.substr(1)).children[0].click();
+			} else if (event.keyCode === 39) {
+				document.getElementById(location.hash.substr(1)).children[2].click();
+			} else if (event.keyCode === 27) {
+				document.getElementById('modal-1').checked = false;
+			}
+		});
 	</script>
 </body>
