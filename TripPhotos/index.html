@@ -1,0 +1,224 @@
+<!doctype html>
+<head>
+	<title>Caleb & Kamila Trip Photos</title>
+	<meta charset="utf-8"/>
+	<link rel="shortcut icon" href="/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		/* Wootzize */
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			font: menu;
+		}
+
+		/* Gallery CSS */
+		.Gallery {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.Gallery img {
+			height: 150px;
+			width: 200px;
+		}
+
+		/* Modal CSS */
+		.Modal {
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100vw;
+			background-color: rgba(0, 0, 0, 0.8);
+			visibility: hidden;
+		}
+		.Modal--Checkbox {
+			display: none;
+		}
+		.Modal--Checkbox:checked + .Modal {
+			visibility: visible;
+		}
+		.Modal--Close {
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+
+		/* Carousel CSS */
+		.Carousel {
+			position: fixed;
+			top: 5vh;
+			left: 5vw;
+			height: 90vh;
+			width: 90vw;
+			display: flex;
+			flex-flow: wrap;
+			flex-direction: column;
+			pointer-events: none;
+			overflow-x: scroll;
+			scroll-behavior: smooth;
+			scroll-snap-type: x mandatory;
+		}
+		/* Hide Scrollbars */
+		.Carousel::-webkit-scrollbar {
+			display: none;
+		}
+		.Carousel {
+			-ms-overflow-style: none;  /* IE and Edge */
+			scrollbar-width: none;  /* Firefox */
+		}
+
+		.Caourcel--Slide {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			overflow: hidden;
+			pointer-events: none;
+			scroll-snap-align: start;
+		}
+		.Modal--Checkbox:checked + .Modal .Caourcel--Slide:target .Slide--BackLink,
+		.Modal--Checkbox:checked + .Modal .Caourcel--Slide:target .Slide--NextLink {
+			visibility: visible;
+		}
+		.Slide--BackLink,
+		.Slide--NextLink {
+			visibility: hidden;
+			position: fixed;
+			margin-top: 40vh;
+			pointer-events: all;
+			background-color: black;
+			height: 5em;
+			width: 5em;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.Slide--BackLink {
+			left: 5vh;
+		}
+		.Slide--BackLink:before {
+			content: "";
+			position: relative;
+			left: -0.25em;
+			border-top: 1em solid transparent;
+			border-bottom: 1em solid transparent;
+			border-right: 1.5em solid white;
+		}
+		.Slide--NextLink {
+			right: 5vh;
+		}
+		.Slide--NextLink:before {
+			content: "";
+			position: relative;
+			left: 0.25em;
+			border-top: 1em solid transparent;
+			border-bottom: 1em solid transparent;
+			border-left: 1.5em solid white;
+		}
+		.Carousel--Image {
+			display: inline-block;
+			height: 100%;
+			pointer-events: all;
+		}
+	</style>
+</head>
+<body>
+	<div id="gallery" class="Gallery" onClick="document.getElementById('modal-1').checked = true;">
+		<a id="gallery-photo" href="">
+			<img src="" />
+		</a>
+	</div>
+
+	<input id="modal-1" class="Modal--Checkbox" type="checkbox" />
+	<div class="Modal">
+		<label class="Modal--Close" for="modal-1"></label>
+		<div id="carousel" class="Carousel">
+			<div id="carousel-slide" class="Caourcel--Slide">
+				<a class="Slide--BackLink" href="image-back"></a>
+				<img class="Carousel--Image" src="" />
+				<a class="Slide--NextLink" href="image-next"></a>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// The list of Photos to loop through.
+		const photos = [
+			"IMG_20200109_135833.jpg",
+			"IMG_20200216_121859.jpg",
+			"IMG_20200228_110558.jpg",
+			"IMG_20200109_154558.jpg",
+			"IMG_20200216_123238.jpg",
+			"IMG_20200228_110711.jpg",
+			"IMG_20200109_155213.jpg",
+			"IMG_20200216_162837.jpg",
+			"IMG_20200307_191536.jpg",
+			"IMG_20200109_172421.jpg",
+			"IMG_20200217_144915.jpg",
+			"IMG_20200308_191833.jpg",
+			"IMG_20200112_190019.jpg",
+			"IMG_20200217_164347.jpg",
+			"IMG_20200309_144908.jpg",
+			"IMG_20200113_145751.jpg",
+			"IMG_20200217_164455.jpg",
+			"IMG_20200309_151533.jpg",
+			"IMG_20200121_183311.jpg",
+			"IMG_20200222_183240.jpg",
+			"IMG_20200309_155716.jpg",
+			"IMG_20200125_110513.jpg",
+			"IMG_20200222_183301.jpg",
+			"IMG_20200310_102508.jpg",
+			"IMG_20200126_151535.jpg",
+			"IMG_20200224_110914.jpg",
+			"IMG_20200320_183200.jpg",
+			"IMG_20200128_154217.jpg",
+			"IMG_20200224_130011.jpg",
+			"IMG_20200321_135922.jpg",
+			"IMG_20200205_102546.jpg",
+			"IMG_20200224_132547.jpg",
+			"IMG_20200403_143843.jpg",
+			"IMG_20200205_133328.jpg",
+			"IMG_20200224_160256.jpg",
+			"IMG_20200706_201446.jpg",
+			"IMG_20200207_143548.jpg",
+			"IMG_20200224_175448.jpg",
+			"IMG_20200707_194523.jpg",
+			"IMG_20200210_134330.jpg",
+			"IMG_20200227_142548.jpg",
+			"IMG_20200215_125857.jpg",
+			"IMG_20200227_151146.jpg",
+		];
+
+		// Add the images to the Gallery
+		const gallery = document.getElementById('gallery');
+		const galleryPhoto = document.getElementById('gallery-photo');
+		gallery.innerHTML = "";
+		for (let i = 0; i < photos.length; i++) {
+			const src = photos[i];
+			const el = galleryPhoto.cloneNode(true);
+			el.id = "";
+			el.href = `#photo-${i}`;
+			el.children[0].src = `./Photos/${src}`;
+			gallery.appendChild(el);
+		}
+
+		// Add the images to the Carousel
+		const carousel = document.getElementById('carousel');
+		const carouselSlide = document.getElementById('carousel-slide');
+		carousel.innerHTML = "";
+		for (let i = 0; i < photos.length; i++) {
+			const src = photos[i];
+			const el = carouselSlide.cloneNode(true);
+			el.id = `photo-${i}`;
+			el.children[0].href = `#photo-${i !== 0 ? i - 1 : photos.length - 1}`
+			el.children[2].href = `#photo-${i !== photos.length - 1 ? i + 1 : 0}`
+			el.children[1].src = `./Photos/${src}`;
+			carousel.appendChild(el);
+		}
+
+	</script>
+</body>
