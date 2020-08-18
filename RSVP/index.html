@@ -1,27 +1,5 @@
 <!doctype html>
 <head>
-	<!--
-		Yes, Kamila and I are getting married.
-		Because of the Coronavirus we had to aggressively slim down the guest list.
-		I am sorry if you are seeing this and are learning of our wedding plans for
-		the first time or were not invited.
-		We had a great trip, are sad that we returned during a pandemic, and look
-		forward to seeing everyone when we are able.
-
-		Notes on the code:
-			With a few exceptions I wrote all the code myself.
-			Do you like how I used almost no JavaScript?
-		Exceptions (things I didn't write myself):
-		- The link to the map was modified from Wikipedia's External Link icon
-			https://en.wikipedia.org/w/skins/Vector/resources/skins.vector.styles/images/external-link-ltr-icon.svg
-		- The favicon was generated using https://favicon.io/.
-			Their Terms Of Use was broken as of July 18, 2020 at 20:44.
-		- I used many tips from Jonathan Harrell's article Advanced CSS Only Form Styling
-			https://www.jonathan-harrell.com/blog/advanced-css-only-form-styling/
-			In particular, I used his ✓ and ✗ mostly unmodified.
-		- RSVP submissions are collected using Formspree
-			https://github.com/formspree/formspree
-	-->
 	<title>Caleb & Kamila RSVP</title>
 	<meta charset="utf-8"/>
 	<link rel="shortcut icon" href="/favicon.ico"/>
@@ -29,11 +7,15 @@
 
 	<style>
 		/* Wootzize */
+		@font-face {
+			font-family: "raleway";
+			src: url('/fonts/Raleway-VariableFont_wght.ttf');
+		}
 		html {
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			font: menu;
+			font-family: raleway, fantasy;
 		}
 		body {
 			margin: 0;
@@ -54,7 +36,7 @@
 			overflow-y: scroll;
 		}
 		.Foreground {
-			padding: 15px 20px;
+			padding: 0 20px 15px;
 		}
 
 		.Banner {
@@ -279,8 +261,6 @@
 			display: block;
 		}
 	</style>
-
-
 </head>
 <body>
 	<div class="Background">

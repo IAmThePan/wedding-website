@@ -7,11 +7,15 @@
 
 	<style>
 		/* Wootzize */
+		@font-face {
+			font-family: "raleway";
+			src: url('/fonts/Raleway-VariableFont_wght.ttf');
+		}
 		html {
 			margin: 0;
 			padding: 0;
 			height: 100vh;
-			font: menu;
+			font-family: raleway, fantasy;
 		}
 		body {
 			margin: 0;
@@ -144,7 +148,7 @@
 
 	<input id="modal-1" class="Modal--Checkbox" type="checkbox" />
 	<div class="Modal">
-		<label class="Modal--Close" for="modal-1"></label>
+		<label class="Modal--Close" for="modal-1" onClick="location.hash=''"></label>
 		<div id="carousel" class="Carousel">
 			<div id="carousel-slide" class="Caourcel--Slide">
 				<a class="Slide--BackLink" href="image-back"></a>
@@ -201,6 +205,7 @@
 			"IMG_20200215_125857.jpg",
 			"IMG_20200227_151146.jpg",
 		];
+		const photoFolder = "./Photos";
 
 		// Add the images to the Gallery
 		const gallery = document.getElementById('gallery');
@@ -211,7 +216,7 @@
 			const el = galleryPhoto.cloneNode(true);
 			el.id = "";
 			el.href = `#photo-${i}`;
-			el.children[0].src = `./Photos/${src}`;
+			el.children[0].src = `./${photoFolder}/${src}`;
 			gallery.appendChild(el);
 		}
 
@@ -225,17 +230,19 @@
 			el.id = `photo-${i}`;
 			el.children[0].href = `#photo-${i !== 0 ? i - 1 : photos.length - 1}`
 			el.children[2].href = `#photo-${i !== photos.length - 1 ? i + 1 : 0}`
-			el.children[1].src = `./Photos/${src}`;
+			el.children[1].src = `./${photoFolder}/${src}`;
 			carousel.appendChild(el);
 		}
 
 		// Add Keypresses
 		document.addEventListener("keydown", (event) => {
+			if (!document.getElementById('modal-1').checked) { return; }
 			if (event.keyCode === 37) {
 				document.getElementById(location.hash.substr(1)).children[0].click();
 			} else if (event.keyCode === 39) {
 				document.getElementById(location.hash.substr(1)).children[2].click();
 			} else if (event.keyCode === 27) {
+				location.hash = "";
 				document.getElementById('modal-1').checked = false;
 			}
 		});

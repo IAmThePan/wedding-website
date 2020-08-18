@@ -1,6 +1,6 @@
-## This is an RSVP Form for my wedding
+## This is a website for my wedding
 
-Yes, Kamila and I are getting married.
+Yes, Kamila and I got married.
 Because of the Coronavirus we had to aggressively slim down the guest list.
 I am sorry if you are seeing this and are learning of our wedding plans for
 the first time or were not invited.
