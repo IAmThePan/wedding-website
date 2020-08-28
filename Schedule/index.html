@@ -1,0 +1,420 @@
+<!doctype html>
+<head>
+	<title>Caleb & Kamila Wedding Schedule</title>
+	<meta charset="utf-8"/>
+	<link rel="shortcut icon" href="/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		/* Wootzize */
+		@font-face {
+			font-family: "raleway";
+			src: url('/fonts/Raleway-VariableFont_wght.ttf');
+		}
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			font-family: raleway, fantasy;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background:
+				linear-gradient(to bottom, #9198e5 0%, transparent 70%, rgba(17, 22, 26, 0.4) 70%, rgba(17, 22, 26, 1) 100%),
+				radial-gradient(circle at 10% 50%, #ff3355 0%, #4433ee 100%);
+		}
+		a:visited,
+		a:hover,
+		a {
+			color: #6666ff;
+			outline: none;
+		}
+		.Background {
+			position: absolute;
+			top: 3vh;
+			left: 3vw;
+			height: 94vh;
+			width: 94vw;
+			border-radius: 8px;
+			background-color: rgba(255, 255, 255, 0.7);
+			overflow-y: scroll;
+			scroll-behavior: smooth;
+		}
+		.Foreground {
+			padding: 0 20px 15px;
+		}
+
+		/* Page Styles */
+		.PageOfContent {
+			display: flex;
+			flex-direction: column;
+			min-height: 94vh;
+			text-align: center;
+		}
+		.PageOfContent__AboveTheFold {
+			height: 94vh;
+		}
+		.DirectionsLink {
+			font-size: 0.75em;
+			text-decoration: none;
+		}
+		.ImageContainer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+		.ImageContainer img {
+			height: 100%;
+		}
+
+		.HillaryReferrer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.HillaryReferrer div {
+			font-size: 1em;
+			line-height: 1.5em;
+			padding: 0.5em;
+		}
+		.HillaryReferrer a {
+			text-decoration: none;
+		}
+		.HillaryReferrer a + a {
+			padding-left: 8px;
+		}
+		.HillaryReferrer svg {
+			display: inline-block;
+		}
+
+		.Schedule {
+			background-color: #ffffff;
+			padding: 1em 2em;
+			border-radius: 5px;
+			max-width: 40em;
+			margin: 0 auto 2em;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+		}
+		.Schedule__Event {
+			padding: 0.5em;
+			border-radius: 5px;
+			background-color: #efefef;
+			margin-bottom: 1em;
+			display: flex;
+		}
+		.Schedule__Time--Large {
+			text-align: center;
+			margin-right: 0.5em;
+			border-right: 3px solid #6666ff;
+			flex: 0 0 100px;
+		}
+		.Schedule__Details {
+			flex: 1 1 auto;
+		}
+		.Schedule__Name {
+			font-weight: bold;
+		}
+		.Schedule__Time.ScheduleTime--Small {
+			display: none;
+			font-style: italic;
+			margin: 0.25em 0 0.5em;
+			border-bottom: 3px solid #6666ff;
+		}
+		.Schedule__Description p {
+			margin: 0.5em 0;
+		}
+
+		/* Helper Classes */
+		.flex-grow {
+			flex-grow: 1;
+		}
+		.full-width {
+			width: 100%;
+		}
+		.text-center {
+			text-align: center;
+		}
+		.text-left {
+			text-align: left;
+		}
+
+		/* Media Queries for different screen sizes */
+		@media screen and (max-width: 500px) {
+			.Schedule__Time.ScheduleTime--Large {
+				display: none;
+			}
+			.Schedule__Time.ScheduleTime--Small {
+				display: block;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="Background">
+		<div class="Foreground">
+			<div class="PageOfContent PageOfContent__AboveTheFold">
+				<div>
+					<h1>Caleb & Kamila Wedding Schedule</h1>
+					<h2>
+						At Brant Lake Summer Camp
+						<a class="DirectionsLink" target="_blank" href="/Directions">
+							(directions)
+						</a>
+					</h2>
+				</div>
+				<div class="ImageContainer flex-grow">
+					<img src="./Photos/schedule1.jpg" />
+				</div>
+				<div class="HillaryReferrer">
+					<div>
+						Thank you Hillary for the fantastic photo.
+					</div>
+					<div>
+						<a target="_blank" href="https://www.hillarycphotography.com/" title="Hillary's Website">
+							<svg viewBox="0 0 12 12" height="19" width="20" fill-rule="evenodd">
+								<path fill="none" stroke="#36c" d="M1.5 4.518h5.982V10.5H1.5z"/>
+								<path fill="#36c" stroke="#36c" d="M5.765 1H11v5.39L9.427 7.937l-1.31-1.31L5.393 9.35l-2.69-2.688 2.81-2.808L4.2 2.544z"/>
+							</svg>
+						</a>
+						<a target="_blank" href="https://www.instagram.com/hillarycphoto/" title="Hillary's Instagram">
+							<svg viewBox="14 14 36 36" height="20" width="20" fill-rule="evenodd">
+								<path fill="#36c" stroke="#36c" d="M46.91,25.816c-0.073-1.597-0.326-2.687-0.697-3.641c-0.383-0.986-0.896-1.823-1.73-2.657c-0.834-0.834-1.67-1.347-2.657-1.73c-0.954-0.371-2.045-0.624-3.641-0.697C36.585,17.017,36.074,17,32,17s-4.585,0.017-6.184,0.09c-1.597,0.073-2.687,0.326-3.641,0.697c-0.986,0.383-1.823,0.896-2.657,1.73c-0.834,0.834-1.347,1.67-1.73,2.657c-0.371,0.954-0.624,2.045-0.697,3.641C17.017,27.415,17,27.926,17,32c0,4.074,0.017,4.585,0.09,6.184c0.073,1.597,0.326,2.687,0.697,3.641c0.383,0.986,0.896,1.823,1.73,2.657c0.834,0.834,1.67,1.347,2.657,1.73c0.954,0.371,2.045,0.624,3.641,0.697C27.415,46.983,27.926,47,32,47s4.585-0.017,6.184-0.09c1.597-0.073,2.687-0.326,3.641-0.697c0.986-0.383,1.823-0.896,2.657-1.73c0.834-0.834,1.347-1.67,1.73-2.657c0.371-0.954,0.624-2.045,0.697-3.641C46.983,36.585,47,36.074,47,32S46.983,27.415,46.91,25.816z M44.21,38.061c-0.067,1.462-0.311,2.257-0.516,2.785c-0.272,0.7-0.597,1.2-1.122,1.725c-0.525,0.525-1.025,0.85-1.725,1.122c-0.529,0.205-1.323,0.45-2.785,0.516c-1.581,0.072-2.056,0.087-6.061,0.087s-4.48-0.015-6.061-0.087c-1.462-0.067-2.257-0.311-2.785-0.516c-0.7-0.272-1.2-0.597-1.725-1.122c-0.525-0.525-0.85-1.025-1.122-1.725c-0.205-0.529-0.45-1.323-0.516-2.785c-0.072-1.582-0.087-2.056-0.087-6.061s0.015-4.48,0.087-6.061c0.067-1.462,0.311-2.257,0.516-2.785c0.272-0.7,0.597-1.2,1.122-1.725c0.525-0.525,1.025-0.85,1.725-1.122c0.529-0.205,1.323-0.45,2.785-0.516c1.582-0.072,2.056-0.087,6.061-0.087s4.48,0.015,6.061,0.087c1.462,0.067,2.257,0.311,2.785,0.516c0.7,0.272,1.2,0.597,1.725,1.122c0.525,0.525,0.85,1.025,1.122,1.725c0.205,0.529,0.45,1.323,0.516,2.785c0.072,1.582,0.087,2.056,0.087,6.061S44.282,36.48,44.21,38.061z M32,24.297c-4.254,0-7.703,3.449-7.703,7.703c0,4.254,3.449,7.703,7.703,7.703c4.254,0,7.703-3.449,7.703-7.703C39.703,27.746,36.254,24.297,32,24.297z M32,37c-2.761,0-5-2.239-5-5c0-2.761,2.239-5,5-5s5,2.239,5,5C37,34.761,34.761,37,32,37z M40.007,22.193c-0.994,0-1.8,0.806-1.8,1.8c0,0.994,0.806,1.8,1.8,1.8c0.994,0,1.8-0.806,1.8-1.8C41.807,22.999,41.001,22.193,40.007,22.193z"/>
+							</svg>
+						</a>
+						<a target="_blank" href="https://www.facebook.com/hillarycphotography" title="Hillary's Facebook">
+							<svg viewBox="14 14 36 36" height="20" width="20" fill-rule="evenodd">
+								<path fill="#36c" stroke="#36c" d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"/>
+							</svg>
+						</a>
+						<a target="_blank" href="https://www.pinterest.com/hillarycphotography/" title="Hillary's Pinterest">
+							<svg viewBox="14 14 36 36" height="18" width="18" fill-rule="evenodd">
+								<path fill="#36c" stroke="#36c" d="M32,16c-8.8,0-16,7.2-16,16c0,6.6,3.9,12.2,9.6,14.7c0-1.1,0-2.5,0.3-3.7 c0.3-1.3,2.1-8.7,2.1-8.7s-0.5-1-0.5-2.5c0-2.4,1.4-4.1,3.1-4.1c1.5,0,2.2,1.1,2.2,2.4c0,1.5-0.9,3.7-1.4,5.7 c-0.4,1.7,0.9,3.1,2.5,3.1c3,0,5.1-3.9,5.1-8.5c0-3.5-2.4-6.1-6.7-6.1c-4.9,0-7.9,3.6-7.9,7.7c0,1.4,0.4,2.4,1.1,3.1 c0.3,0.3,0.3,0.5,0.2,0.9c-0.1,0.3-0.3,1-0.3,1.3c-0.1,0.4-0.4,0.6-0.8,0.4c-2.2-0.9-3.3-3.4-3.3-6.1c0-4.5,3.8-10,11.4-10 c6.1,0,10.1,4.4,10.1,9.2c0,6.3-3.5,11-8.6,11c-1.7,0-3.4-0.9-3.9-2c0,0-0.9,3.7-1.1,4.4c-0.3,1.2-1,2.5-1.6,3.4 c1.4,0.4,3,0.7,4.5,0.7c8.8,0,16-7.2,16-16C48,23.2,40.8,16,32,16z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="PageOfContent">
+				<h2>Schedule of Events</h2>
+				<div class="Schedule text-left">
+					<h3>Friday, September 11:</h3>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">4pm - Late</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Arrive at Brant Lake Camp</div>
+							<div class="Schedule__Time--Small">4pm - Late</div>
+							<div class="Schedule__Description">
+								<p>Brant Lake Staff will help you locate your assigned cabin.</p>
+								<p>After you are settled feel free to explore the camp, relax, and prepare for dinner.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">7:00pm - 8:30pm</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Welcome BBQ</div>
+							<div class="Schedule__Time--Small">7:00pm - 8:30pm</div>
+							<div class="Schedule__Description">
+								<p>Eat, drink and be merry.</p>
+								<p>This is the beginning of a fun weekend!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="Schedule text-left">
+					<h3>Saturday, September 12:</h3>
+					<div class="Schedule__Event">
+						<p class="text-center full-width">
+							Coffee and tea will be available at various places around camp before breakfast.
+						</p>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">7:30am - 8:00am</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Tea Time</div>
+							<div class="Schedule__Time--Small">7:30am - 8:00am</div>
+							<div class="Schedule__Description">
+								<p>Start your day with Caleb & Kamila for some early morning tea.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">8:00am - 8:30am</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Morning Yoga</div>
+							<div class="Schedule__Time--Small">8:00am - 8:30am</div>
+							<div class="Schedule__Description">
+								<p>Wake up and stretch with Kamila for some outside yoga.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">9:00am - 10:00am</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Breakfast</div>
+							<div class="Schedule__Time--Small">9:00am - 10:00am</div>
+							<div class="Schedule__Description">
+								<p>Scrumptious nutrition to energize you for a day full of activities.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">9:30am - 11:00am</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Tie Dye</div>
+							<div class="Schedule__Time--Small">9:30am - 11:00am</div>
+							<div class="Schedule__Description">
+								<p>We'll supply the dyes, rubber bands, baggies, and expertise.</p>
+								<p>Just bring all the 100% cotton stained cloting you've been hoarding.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">All Day until Ceremony</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Waterfront & Camp Activities</div>
+							<div class="Schedule__Time--Small">All Day until Ceremony</div>
+							<div class="Schedule__Description">
+								<p>
+									The waterfront will have canoes, kayaks, and paddle boards.
+									You can also fish, swim, and play in the sand.
+								</p>
+								<p>
+									There are fields and equipment for you to live your best camp life.
+									Assemble a group for dodgeball, create your own Frisbee-Golf course,
+									organize a morning softball game.
+									Talk to the staff, they'll hook you up.
+								</p>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">Noon</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Egg Toss</div>
+							<div class="Schedule__Time--Small">Noon</div>
+							<div class="Schedule__Description">
+								<p>Find a partner and don't be late.</p>
+								<p>Preferably not Humpty Dumpty.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">12:30pm - 1:30pm</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Lunch</div>
+							<div class="Schedule__Time--Small">12:30pm - 1:30pm</div>
+							<div class="Schedule__Description">
+								<p>Tacos!</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">2:00pm</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Decorate the Moon Arch</div>
+							<div class="Schedule__Time--Small">2:00pm</div>
+							<div class="Schedule__Description">
+								<p>
+									We need your expertise to tastefully decorate a giant moon
+									arch with local flowers.
+								<p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">5:00pm</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Ceremony</div>
+							<div class="Schedule__Time--Small">5:00pm</div>
+							<div class="Schedule__Description">
+								<p>Come down to the beach to witness the sunset.</p>
+								<p>That's also where we will be getting married.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">6:00pm - 7:00pm</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Cocktail Hour</div>
+							<div class="Schedule__Time--Small">6:00pm - 7:00pm</div>
+							<div class="Schedule__Description">
+								<p>Enjoy a refreshment, the views, and tasty hors d'oeuvres.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">7:00pm</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Dinner</div>
+							<div class="Schedule__Time--Small">7:00pm</div>
+							<div class="Schedule__Description">
+								<p>Come for the champagne. Stay for the food.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">8:00pm - 10:00pm</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Festivities</div>
+							<div class="Schedule__Time--Small">8:00pm - 10:00pm</div>
+							<div class="Schedule__Description">
+								<p>Musical Interlude. Come by the Clubhouse for music.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">9:00pm</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Dessert</div>
+							<div class="Schedule__Time--Small">9:00pm</div>
+							<div class="Schedule__Description">
+								<p>Take a break from the festivities and head back to the Dining Hall to grab some dessert.</p>
+							</div>
+						</div>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">11:00pm</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">After Party / Silent Disco</div>
+							<div class="Schedule__Time--Small">11:00pm</div>
+							<div class="Schedule__Description">
+								<p>Make sure your phone is charged and bring your noise cancelling headphones.</p>
+								<p>Get your costume on but don't change too much...</p>
+								<p>Solo Dancing until the sun rises.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="Schedule text-left">
+					<h3>Sunday, September 13:</h3>
+					<div class="Schedule__Event">
+						<p class="text-center full-width">
+							Coffee and tea will be available at various places around camp before breakfast.
+						</p>
+					</div>
+					<div class="Schedule__Event">
+						<div class="Schedule__Time--Large">10:00am - 11:00am</div>
+						<div class="Schedule__Details">
+							<div class="Schedule__Name">Farewell Brunch</div>
+							<div class="Schedule__Time--Small">10:00am - 11:00am</div>
+							<div class="Schedule__Description">
+								<p>
+									Hang out and eat or grab your food to go. If we don't
+									finish all the eggs there will be another Egg Toss.
+								</p>
+								<p>Don't forget your Tie-Dyes!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
