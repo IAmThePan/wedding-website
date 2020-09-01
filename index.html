@@ -33,7 +33,6 @@
 	<meta charset="utf-8"/>
 	<link rel="shortcut icon" href="/favicon.ico"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Refresh" content="2; URL=/Announcement" />
 
 	<style>
 		/* Wootzize */
@@ -49,20 +48,128 @@
 		}
 		body {
 			margin: 0;
-			padding: 15vh 15vw;
+			padding: 0;
 			height: 100%;
 			background:
 				linear-gradient(to bottom, #9198e5 0%, transparent 70%, rgba(17, 22, 26, 0.4) 70%, rgba(17, 22, 26, 1) 100%),
 				radial-gradient(circle at 10% 50%, #ff3355 0%, #4433ee 100%);
 		}
+		a:visited,
+		a:hover,
+		a {
+			color: #6666ff;
+			outline: none;
+		}
+		h1 {
+			margin: 0.25em 0;
+		}
+		h2, h4 {
+			margin: 0.5em 0;
+		}
+		.Background {
+			position: absolute;
+			top: 3vh;
+			left: 3vw;
+			height: 94vh;
+			width: 94vw;
+			border-radius: 8px;
+			background-color: rgba(255, 255, 255, 0.7);
+			overflow-y: scroll;
+			scroll-behavior: smooth;
+		}
+		.Foreground {
+			padding: 0 20px 15px;
+		}
+
+		/* Page Styles */
+		.PageOfContent {
+			display: flex;
+			flex-direction: column;
+			height: 94vh;
+			text-align: center;
+			margin-bottom: 1em;
+		}
+		.PageOfContent:last-of-type {
+			margin-bottom: 0;
+		}
+		.ImageContainer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+		.ImageContainer img {
+			height: 100%;
+		}
+		.LinksContainer {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+		.LinksContainer a {
+			padding: 0.25em 1em;
+		}
 
 		/* Helper Classes */
+		.flex-grow {
+			flex-grow: 1;
+		}
+		.full-width {
+			width: 100%;
+		}
 		.text-center {
 			text-align: center;
+		}
+		.text-left {
+			text-align: left;
+		}
+		.hidden {
+			display: none;
 		}
 	</style>
 </head>
 <body>
-	<h1 class="text-center">Wedding Website under construction</h1>
-	<h2 class="text-center">Redirecting to the Announcement Page...</h2>
+	<div class="Background">
+		<div class="Foreground">
+			<div class="PageOfContent">
+				<h1>Welcome to Caleb & Kamila's Wedding Page</h1>
+				<div class="ImageContainer flex-grow">
+					<img src="./Announcement/Photos/announcement1.jpg" />
+				</div>
+				<h2>We are already married</h2>
+				<h4><a href="/Announcement">See the Announcement</a></h4>
+			</div>
+
+			<div class="PageOfContent">
+				<h2>And we are having a celebration.</h2>
+				<div class="ImageContainer flex-grow">
+					<img src="./PackingList/Photos/packinglist1.jpg" />
+				</div>
+				<h4 class="LinksContainer">
+					<a href="/Schedule">See the Schedule</a>
+					<a href="/PackingList">See what to Pack</a>
+				</h4>
+			</div>
+
+			<div class="PageOfContent">
+				<h2>We are taking Coronavirus seriously and ask you to do the same.</h2>
+				<div class="ImageContainer flex-grow">
+					<img src="./Schedule/Photos/schedule2.jpg" />
+				</div>
+				<h4><a href="/Coronavirus">See the precautions we are taking</a></h4>
+			</div>
+
+			<div class="PageOfContent">
+				<h2>Check out our wedding registry and photos from our trip.</h2>
+				<div class="ImageContainer flex-grow">
+					<img src="./Registry/Photos/registry1.jpg" />
+				</div>
+				<h4 class="LinksContainer">
+					<a href="/Registry">See our Wedding Registry</a>
+					<a href="/TripPhotos">Photos from our Trip</a>
+				</h4>
+			</div>
+
+		</div>
+	</div>
 </body>

@@ -1,0 +1,272 @@
+<!doctype html>
+<head>
+	<title>Packing List</title>
+	<meta charset="utf-8"/>
+	<link rel="shortcut icon" href="/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		/* Wootzize */
+		@font-face {
+			font-family: "raleway";
+			src: url('/fonts/Raleway-VariableFont_wght.ttf');
+		}
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			font-family: raleway, fantasy;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background:
+				linear-gradient(to bottom, #9198e5 0%, transparent 70%, rgba(17, 22, 26, 0.4) 70%, rgba(17, 22, 26, 1) 100%),
+				radial-gradient(circle at 10% 50%, #ff3355 0%, #4433ee 100%);
+		}
+		a:visited,
+		a:hover,
+		a {
+			color: #6666ff;
+			outline: none;
+		}
+		.Background {
+			position: absolute;
+			top: 3vh;
+			left: 3vw;
+			height: 94vh;
+			width: 94vw;
+			border-radius: 8px;
+			background-color: rgba(255, 255, 255, 0.7);
+			overflow-y: scroll;
+			scroll-behavior: smooth;
+		}
+		.Foreground {
+			padding: 0 20px 15px;
+		}
+
+		/* Page Styles */
+		.PageOfContent {
+			display: flex;
+			flex-direction: column;
+			min-height: 94vh;
+			text-align: center;
+		}
+		.PageOfContent__AboveTheFold {
+			height: 94vh;
+		}
+		.PageOfContent__Smaller {
+			min-height: 90vh;
+			height: 90vh;
+		}
+		.ImageContainer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+		.ImageContainer img {
+			height: 100%;
+		}
+		.ImageReferrer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.ImageReferrer div {
+			font-size: 1em;
+			line-height: 1.5em;
+			padding: 0.5em;
+		}
+
+		.Coronavirus {
+			background-color: #f28813;
+			padding: 1em 2em;
+			border-radius: 5px;
+			max-width: 45em;
+			margin: 2em auto 2em;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+		}
+		.Coronavirus a:visited,
+		.Coronavirus a:hover,
+		.Coronavirus a {
+			color: #4a4a4a;
+			font-weight: 500;
+		}
+
+		.PackingList {
+			background-color: #ffffff;
+			padding: 1em 2em;
+			border-radius: 5px;
+			max-width: 45em;
+			margin: 0 auto 2em;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+		}
+		.PackingList__bold {
+			font-weight: bold;
+		}
+
+		/* Helper Classes */
+		.flex-grow {
+			flex-grow: 1;
+		}
+		.full-width {
+			width: 100%;
+		}
+		.text-center {
+			text-align: center;
+		}
+		.text-left {
+			text-align: left;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="Background">
+		<div class="Foreground">
+			<div class="PageOfContent PageOfContent__AboveTheFold">
+				<div>
+					<h1>Suggested Packing List</h1>
+				</div>
+				<div class="ImageContainer flex-grow">
+					<img src="./Photos/packinglist1.jpg" />
+				</div>
+				<div class="ImageReferrer">
+					<div>
+						Thank you Nathan for visiting us in Thailand and taking this quintessential travel photo.
+					</div>
+				</div>
+			</div>
+
+			<div class="Coronavirus text-center">
+				<a href="/Coronavirus">
+					See the Coronavirus precautions we are taking
+				</a>
+			</div>
+
+			<div class="PageOfContent">
+				<div class="PackingList text-left">
+					<h2 class="text-center">For your Cabin</h2>
+					<p>
+						Cabins will be provided for each family, couple or individual.
+						Each cabin has its own bathroom with toilet, toilet paper, shower and sink.
+						Cabins have electricity but are not weatherized, it may get cold.
+						Beds are small, and a bottom sheet, pillow and pillowcase will be provided.
+					</p>
+					<p class="PackingList__bold">
+						Please bring your own:
+					</p>
+					<ul>
+						<li>Comforter, warm blanket or sleeping bag</li>
+						<li>Top sheet, if that's your style</li>
+						<li>Pillows & pillow cases if you are particular</li>
+						<li>Towels, for both showering and swimming</li>
+						<li>Slippers</li>
+						<li>Headlamp or flashlight</li>
+						<li>Toiletries: shampoo/conditioner, soap, toothpaste, ...</li>
+						<li>Room decor (optional)</li>
+						<li>Bluetooth speaker for personal use (optional)</li>
+					</ul>
+				</div>
+
+				<div class="PackingList text-left">
+					<h2 class="text-center">For Activities</h2>
+					<p>
+						Saturday will be a day full of camp activities
+						(<a href="/Schedule#schedule">see the schedule</a>).
+					</p>
+					<p>
+						The camp has a waterfront.  Swimming is encouraged.
+						Kayaks, canoes, and stand-up paddle boards will be available for general use.
+						You can also go fishing, rods are available.
+					</p>
+					<p>
+						Brant Lake is a sports camp.  There are many fields and the staff will
+						have equipment on hand for impromptu games.  If you would like to bring
+						your own game or equipment, feel free.
+					</p>
+					<p class="PackingList__bold">
+						Please bring your own:
+					</p>
+					<ul>
+						<li>White clothing to Tie Dye (100% cotton works best)</li>
+						<li>Bathing suit and towel</li>
+						<li>Athletic clothes & shoes for playing sports</li>
+						<li>A musical instrument if you want to jam in the Clubhouse</li>
+						<li>Yoga mat</li>
+						<li>Sunscreen (reef safe please)</li>
+						<li>Lawn games or specialized equipment (SpikeBall, CamJam, baaseball mitt, <em>etc.</em>)</li>
+						<li>Hula hoop, hopscotch chalk, bubble wands, origami paper... whatever suits your fancy.</li>
+					</ul>
+				</div>
+
+				<div class="PackingList text-left">
+					<h2 class="text-center">For the Wedding Festivities</h2>
+					<p>
+						Campground athletic attire is recommended for daytime and nighttime
+						activities.  The camp is on a hill so comfortable shoes are a must.
+						Bring a hoodie for hanging around the campfire; it gets cold at night.
+					</p>
+					<p>
+						The ceremony will be held on a sandy, lakeside beach with a mix of rocky
+						and paved paths.  Please plan your footwear accordingly.
+					</p>
+					<p class="PackingList__bold">
+						Please wear:
+					</p>
+					<ul>
+						<li>Dressy/Beachy Casual attire for the Ceremony</li>
+						<li>Flat shoes (ladies, heels are not recommended)</li>
+						<li>Warm sweater or shawl for cool September nights</li>
+						<li>A Light jacket in case of rain (optional)</li>
+					</ul>
+				</div>
+
+				<div class="PackingList text-left">
+					<h2 class="text-center">For the After Party</h2>
+					<p>
+						We are putting on a Silent Disco!
+					</p>
+					<p>
+						A Silent Disco is an event where everyone listens to the same music
+						on their own headphones.  The music is synced so everyone hears the
+						same thing at the same time.  If you take the headphones off you will not
+						hear a thing, hence Silent.
+					</p>
+					<p>
+						We think this a Covid-responsible way to have dancing.  Wearing headphones
+						will encourage solo dancing.  Hearing the same music as
+						everyone else will make dancing a communal, if distant, activity.
+					</p>
+					<p class="PackingList__bold">
+						If you would like to participate, please bring your own:
+					</p>
+					<ul>
+						<li>Phone with the Airfoil Satellite app pre-downloaded
+							(<a href="https://rogueamoeba.com/airfoil/satellite/">website</a>)
+						</li>
+						<li>Noise cancelling headphones, or other good headphones</li>
+						<li>Costume (encouraged)</li>
+					</ul>
+				</div>
+
+				<div class="PageOfContent PageOfContent__Smaller">
+					<div class="ImageContainer flex-grow">
+						<img src="./Photos/packinglist2.jpeg" />
+					</div>
+					<div class="ImageReferrer">
+						<div>
+							Another photo taken by Nathan in Thailand. I watched him take it, it was awesome.
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
